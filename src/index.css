@@ -1,0 +1,61 @@
+@import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #ff6b00;
+  --secondary: #000000;
+  --accent: #4CAF50;
+}
+
+body {
+  font-family: 'Vazir', sans-serif;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(255, 107, 0, 0.8) 100%);
+  color: white;
+  min-height: 100vh;
+  direction: rtl;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--primary), var(--accent));
+  border-radius: 5px;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.slide-in {
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Editor Styles */
+.ProseMirror {
+  @apply p-4 min-h-[200px] bg-white/10 rounded-lg outline-none;
+}
+
+.ProseMirror p {
+  @apply mb-2;
+}
